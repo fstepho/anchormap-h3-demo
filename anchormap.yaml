@@ -1,0 +1,14 @@
+version: 1
+product_root: 'src'
+spec_roots:
+  - 'specs'
+mappings:
+  'UTILS.CORS.HANDLE_CORS':
+    seed_files:
+      - 'src/utils/cors.ts'
+  'UTILS.JSON_RPC.DEFINE_JSON_RPC_HANDLER':
+    seed_files:
+      - 'src/utils/json-rpc.ts'
+  'UTILS.SESSION.USE_SESSION':
+    seed_files:
+      - 'src/utils/session.ts'
