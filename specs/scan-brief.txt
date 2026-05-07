@@ -1,0 +1,29 @@
+AnchorMap scan brief
+
+Scan status
+- schema_version: 3
+- analysis_health: clean
+- product_root: src
+- tsconfig_path: none
+- public local aliases: none
+
+Coverage
+- product files: 58
+- usable mappings: 3
+- covered product files: 31 / 58
+- multi-covered product files: 25
+
+Anchors
+- observed: 308
+- active: 3
+- draft: 305
+
+Usable anchor reach
+- UTILS.CORS.HANDLE_CORS: reached 29, unique 4, shared 25
+- UTILS.JSON_RPC.DEFINE_JSON_RPC_HANDLER: reached 27, unique 2, shared 25
+- UTILS.SESSION.USE_SESSION: reached 25, unique 0, shared 25
+
+Findings
+- untraced_product_file: 27
+
+Interpretation: this is a successful clean scan. This brief is a non-contractual demo view over scan --json. It does not imply dead code, ownership, or architecture quality.
