@@ -11,6 +11,31 @@ No h3 source file was modified. Four Anchormap command types were used: init, sc
 
 ---
 
+## GitHub Action PR Preview
+
+This repository also hosts the public AnchorMap GitHub Action preview scenario
+set. The preview workflow is staged in a draft PR and uses:
+
+- `fstepho/anchormap-action@task/gha-1-composite-action`
+- `anchormap@1.2.2`
+- explicit baseline scan artifact `.anchormap/baseline.scan.json`
+- generated workflow artifacts, not PR comments or SaaS upload
+
+Preview PRs:
+
+| PR | Scenario | Expected AnchorMap signal |
+| --- | --- | --- |
+| [#1](https://github.com/fstepho/anchormap-h3-demo/pull/1) | Workflow base | Adds the preview workflow, policy, baseline, and demo guide. |
+| [#2](https://github.com/fstepho/anchormap-h3-demo/pull/2) | Clean change | Policy pass, clean analysis. |
+| [#3](https://github.com/fstepho/anchormap-h3-demo/pull/3) | Unmapped anchor | Policy exit `5` for `unmapped_anchor`. |
+| [#4](https://github.com/fstepho/anchormap-h3-demo/pull/4) | Stale mapping | Policy exit `5` for `stale_mapping_anchor` and degraded analysis. |
+| [#5](https://github.com/fstepho/anchormap-h3-demo/pull/5) | Degraded analysis | Policy exit `5` for degraded analysis from an unsupported local edge. |
+
+The preview is intentionally draft-only. No Action tag, Marketplace release,
+merge, PR comment automation, or AnchorMap SaaS upload is implied by these PRs.
+
+---
+
 ## What was done
 
 **Step 1 — init**

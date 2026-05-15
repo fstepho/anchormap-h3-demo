@@ -10,13 +10,21 @@ fstepho/anchormap-action@task/gha-1-composite-action
 
 It pins the CLI package to `anchormap@1.2.2` and supplies an explicit baseline scan at `.anchormap/baseline.scan.json`. The workflow does not infer a baseline from Git refs, does not post PR comments, and does not upload source to any SaaS service.
 
+The workflow base is tracked in draft PR
+[#1](https://github.com/fstepho/anchormap-h3-demo/pull/1). Scenario PRs target
+that branch, not `main`.
+
 ## Scenarios
 
-Demo PR branches target this branch, not `main`:
+| PR | Branch | Expected signal |
+| --- | --- | --- |
+| [#2](https://github.com/fstepho/anchormap-h3-demo/pull/2) | `demo/scenario-clean` | Policy pass with clean analysis. |
+| [#3](https://github.com/fstepho/anchormap-h3-demo/pull/3) | `demo/scenario-unmapped-anchor` | Policy exit `5` for `unmapped_anchor`; analysis remains clean. |
+| [#4](https://github.com/fstepho/anchormap-h3-demo/pull/4) | `demo/scenario-stale-mapping` | Policy exit `5` for `stale_mapping_anchor` and degraded analysis. |
+| [#5](https://github.com/fstepho/anchormap-h3-demo/pull/5) | `demo/scenario-degraded-analysis` | Policy exit `5` for degraded analysis from an unsupported local edge. |
 
-- clean PR: no AnchorMap policy failure expected;
-- unmapped anchor PR: adds an observed anchor without a stored mapping;
-- stale mapping PR: removes an observed anchor that still has a stored mapping;
-- degraded analysis PR: introduces an unsupported local edge that degrades analysis.
+All scenario workflows are configured with `fail-on-policy: "false"` so the
+GitHub workflow can complete and upload artifacts even when AnchorMap policy
+decision is `fail`.
 
 Only real GitHub Actions runs and artifacts should be used as evidence.
