@@ -1,5 +1,41 @@
 # h3 × Anchormap — structural traceability demo
 
+## Give a 5-minute first reaction
+
+AnchorMap detects spec-to-code traceability drift in TypeScript PRs.
+
+You do not need to install anything to react to the preview.
+
+Start here:
+
+- Feedback issue: https://github.com/fstepho/anchormap/issues/5
+- Clean demo PR: https://github.com/fstepho/anchormap-h3-demo/pull/2
+- New unmapped anchor: https://github.com/fstepho/anchormap-h3-demo/pull/3
+- Stale mapping: https://github.com/fstepho/anchormap-h3-demo/pull/4
+- Degraded analysis: https://github.com/fstepho/anchormap-h3-demo/pull/5
+
+Useful reaction:
+
+1. Did you understand the problem?
+2. Did the PR report make sense?
+3. Would you try this on a TypeScript repo?
+4. What confused you?
+
+## The problem
+
+In many TypeScript projects, product/API/spec documents change separately from code.
+
+During review, it is hard to see whether:
+
+- a new requirement-like statement was added without code mapping;
+- an old mapping points to something that no longer exists;
+- a PR reduced traceability coverage;
+- the report is still reliable enough to trust.
+
+AnchorMap makes those cases visible in CI as local artifacts and a PR-readable Markdown report.
+
+## Demo Context
+
 This repo applies [Anchormap](https://github.com/fstepho/anchormap) to the source
 of [h3](https://github.com/unjs/h3), an HTTP framework for TypeScript (MIT).
 No h3 source file was modified. Four Anchormap command types were used: init, scaffold, map, and scan.
