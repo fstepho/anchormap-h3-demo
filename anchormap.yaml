@@ -9,6 +9,9 @@ mappings:
   'UTILS.JSON_RPC.DEFINE_JSON_RPC_HANDLER':
     seed_files:
       - 'src/utils/json-rpc.ts'
+  'PREVIEW.STALE_MAPPING':
+    seed_files:
+      - 'src/utils/session.ts'
   'UTILS.SESSION.USE_SESSION':
     seed_files:
       - 'src/utils/session.ts'
