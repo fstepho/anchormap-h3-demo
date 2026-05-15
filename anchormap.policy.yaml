@@ -1,0 +1,9 @@
+version: 1
+thresholds:
+  min_covered_product_file_percent: 1
+  max_untraced_product_files: 1000
+fail_on:
+  analysis_health: degraded
+  finding_kinds:
+    - unmapped_anchor
+    - stale_mapping_anchor

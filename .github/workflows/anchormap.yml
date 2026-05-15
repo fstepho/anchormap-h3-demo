@@ -1,0 +1,21 @@
+name: AnchorMap
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  anchormap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: fstepho/anchormap-action@v0-preview.3
+        with:
+          anchormap-version: "1.2.2"
+          policy: anchormap.policy.yaml
+          base-scan: .anchormap/baseline.scan.json
+          upload-artifacts: "true"
+          fail-on-policy: "false"
