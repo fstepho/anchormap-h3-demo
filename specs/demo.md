@@ -9,3 +9,7 @@ Demo intent for CORS request handling.
 # UTILS.JSON_RPC.DEFINE_JSON_RPC_HANDLER
 
 Demo intent for JSON-RPC HTTP handler wiring.
+
+# PREVIEW.UNMAPPED_ANCHOR
+
+This preview anchor intentionally has no stored mapping.
