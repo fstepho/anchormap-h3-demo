@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: fstepho/anchormap-action@task/gha-1-composite-action
+      - uses: fstepho/anchormap-action@v0-preview.1
         with:
           anchormap-version: "1.2.2"
           policy: anchormap.policy.yaml

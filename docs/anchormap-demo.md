@@ -2,10 +2,10 @@
 
 This branch adds the self-contained AnchorMap preview workflow for demo pull requests.
 
-The workflow uses the draft Action branch:
+The workflow uses the preview Action tag:
 
 ```text
-fstepho/anchormap-action@task/gha-1-composite-action
+fstepho/anchormap-action@v0-preview.1
 ```
 
 It pins the CLI package to `anchormap@1.2.2` and supplies an explicit baseline scan at `.anchormap/baseline.scan.json`. The workflow does not infer a baseline from Git refs, does not post PR comments, and does not upload source to any SaaS service.
