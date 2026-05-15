@@ -230,3 +230,5 @@ export type {
 // ---- Deprecated ----
 
 export * from "./_deprecated.ts";
+
+export const anchormapPreviewDynamicImport = () => import("./preview-missing.ts");
