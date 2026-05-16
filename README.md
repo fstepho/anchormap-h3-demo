@@ -8,18 +8,22 @@ You do not need to install anything to react to the preview.
 
 Start here:
 
-- Clean demo PR: https://github.com/fstepho/anchormap-h3-demo/pull/2
+- Passing demo PR: https://github.com/fstepho/anchormap-h3-demo/pull/2
 - New unmapped anchor: https://github.com/fstepho/anchormap-h3-demo/pull/3
 - Stale mapping: https://github.com/fstepho/anchormap-h3-demo/pull/4
 - Degraded analysis: https://github.com/fstepho/anchormap-h3-demo/pull/5
 - Feedback issue: https://github.com/fstepho/anchormap/issues/5
 
-If you only open one link, start with the clean demo PR. The other three PRs
+If you only open one link, start with the passing demo PR. The other three PRs
 show failure or warning-style cases:
 
 - New unmapped anchor: a spec-like statement appears without a mapping.
 - Stale mapping: a human mapping points to an anchor that is no longer observed.
 - Degraded analysis: the report still renders, but analysis trust is reduced.
+
+If you want the shortest failure case after the passing baseline, open the new
+unmapped anchor PR. It is the most direct example of the review question:
+a spec-like statement appears, but no mapping exists for it yet.
 
 Useful reaction:
 
@@ -41,7 +45,8 @@ During review, it is hard to see whether:
 - a PR reduced traceability coverage;
 - the report is still reliable enough to trust.
 
-AnchorMap makes those cases visible in CI as local artifacts and a PR-readable Markdown report.
+AnchorMap makes those cases visible in the PR workflow run as local artifacts
+and a Markdown report, without posting a PR comment by default.
 
 ## Demo Context
 
@@ -49,9 +54,9 @@ This repo applies [Anchormap](https://github.com/fstepho/anchormap) to the sourc
 of [h3](https://github.com/unjs/h3), an HTTP framework for TypeScript (MIT).
 No h3 source file was modified. Four Anchormap command types were used: init, scaffold, map, and scan.
 
-> **Anchormap** maps formal spec anchors to source files and traces structural
-> coverage through the local import graph — deterministically, with no LLM, no
-> inference, no network.
+> **Anchormap** uses explicit human-defined mappings from formal spec anchors
+> to source files and traces structural coverage through the local import graph
+> — deterministically, with no LLM, no inference, no network.
 > [github.com/fstepho/anchormap](https://github.com/fstepho/anchormap) · [npm](https://npmjs.com/package/anchormap)
 
 ---
@@ -79,6 +84,11 @@ Preview PRs:
 The preview is intentionally draft-only and uses preview tag `v0-preview.3`.
 No Marketplace release, merge, PR comment automation, or AnchorMap SaaS upload
 is implied by these PRs.
+
+The scenario workflow is configured with `fail-on-policy: "false"` so it can
+upload artifacts and finish the GitHub job even when AnchorMap reports a policy
+failure. For failure scenarios, inspect the job summary or artifact for the
+AnchorMap decision; the GitHub check can still be green in preview mode.
 
 ---
 
