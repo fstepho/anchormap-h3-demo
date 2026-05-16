@@ -20,4 +20,4 @@ jobs:
           policy: anchormap.policy.yaml
           base-scan: .anchormap/baseline.scan.json
           upload-artifacts: "true"
-          fail-on-policy: "false"
+          fail-on-policy: "true"

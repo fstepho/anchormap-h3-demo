@@ -84,10 +84,15 @@ The preview is intentionally draft-only and uses preview tag `v0-preview.4`.
 No Marketplace release, merge, PR comment automation, or AnchorMap SaaS upload
 is implied by these PRs.
 
-The scenario workflow is configured with `fail-on-policy: "false"` so it can
-upload artifacts and finish the GitHub job even when AnchorMap reports a policy
-failure. For failure scenarios, inspect the job summary or artifact for the
-AnchorMap decision; the GitHub check can still be green in preview mode.
+The scenario workflow is configured as a CI gate with
+`fail-on-policy: "true"`, which is also the Action default. The PR body summary
+is the first read; the Action then writes the job summary and artifacts before
+policy `FAIL` makes the GitHub check red. Use `fail-on-policy: "false"` only
+for advisory exploration when you want `policy_exit = 5` without blocking the
+workflow.
+
+Read the PR body summary and job summary first. Logs and artifacts are optional
+verification context.
 
 ---
 

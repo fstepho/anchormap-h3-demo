@@ -23,8 +23,15 @@ that branch, not `main`.
 | [#4](https://github.com/fstepho/anchormap-h3-demo/pull/4) | `demo/scenario-stale-mapping` | Policy exit `5` for `stale_mapping_anchor` and degraded analysis. |
 | [#5](https://github.com/fstepho/anchormap-h3-demo/pull/5) | `demo/scenario-degraded-analysis` | Policy exit `5` for degraded analysis from an unsupported local edge. |
 
-All scenario workflows are configured with `fail-on-policy: "false"` so the
-GitHub workflow can complete and upload artifacts even when AnchorMap policy
-decision is `fail`.
+All scenario workflows are configured as CI gates with
+`fail-on-policy: "true"`, which is also the Action default. A policy `fail`
+decision should make the GitHub check fail after the PR body summary, job
+summary, and artifacts are available.
+
+Use `fail-on-policy: "false"` only for advisory exploration when you want the
+workflow to stay green while exposing `policy_exit = 5`.
+
+Read the PR body summary and job summary first. Logs and artifacts are optional
+verification context.
 
 Only real GitHub Actions runs and artifacts should be used as evidence.
