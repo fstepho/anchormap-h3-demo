@@ -66,7 +66,7 @@ No h3 source file was modified. Four Anchormap command types were used: init, sc
 This repository also hosts the public AnchorMap GitHub Action preview scenario
 set. The preview workflow is staged in a draft PR and uses:
 
-- `fstepho/anchormap-action@v0-preview.3`
+- `fstepho/anchormap-action@v0-preview.4`
 - `anchormap@1.2.2`
 - explicit baseline scan artifact `.anchormap/baseline.scan.json`
 - generated workflow artifacts, not PR comments or SaaS upload
@@ -81,7 +81,7 @@ Preview PRs:
 | [#4](https://github.com/fstepho/anchormap-h3-demo/pull/4) | Stale mapping | Policy exit `5` for `stale_mapping_anchor` and degraded analysis. |
 | [#5](https://github.com/fstepho/anchormap-h3-demo/pull/5) | Degraded analysis | Policy exit `5` for degraded analysis from an unsupported local edge. |
 
-The preview is intentionally draft-only and uses preview tag `v0-preview.3`.
+The preview is intentionally draft-only and uses preview tag `v0-preview.4`.
 No Marketplace release, merge, PR comment automation, or AnchorMap SaaS upload
 is implied by these PRs.
 
