@@ -10,6 +10,8 @@ Demo intent for CORS request handling.
 
 Demo intent for JSON-RPC HTTP handler wiring.
 
-# PREVIEW.UNMAPPED_ANCHOR
+# DOC.CORS.PREFLIGHT_REQUEST_HANDLING
 
-This preview anchor intentionally has no stored mapping.
+`handleCors` should treat an `OPTIONS` request with `Origin` and
+`Access-Control-Request-Method` as a CORS preflight request, append the
+configured preflight headers, and return a no-content response.
